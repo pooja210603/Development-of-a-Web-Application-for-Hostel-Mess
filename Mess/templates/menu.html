@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div style="text-align: center;">
+    <h1 style="font-size: 24px; margin-bottom: 20px;">Mess-Menu</h1>
+    <table style="margin: 0 auto; border-collapse: collapse; width: 80%;">
+        <tbody>
+            <tr>
+                <th style="background-color: #f2f2f2; padding: 10px; text-align: center;">Meal</th>
+                <th style="background-color: #f2f2f2; padding: 10px; text-align: center;">Food List</th>
+                <th style="background-color: #f2f2f2; padding: 10px; text-align: center;">Ingredients</th>
+            </tr>
+            {% for item in menu_items %}
+                <tr>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">Breakfast</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.breakfast_foodlist }}</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.breakfast_ingredients }}</td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">Lunch</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.lunch_foodlist }}</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.lunch_ingredients }}</td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">Snacks</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.snacks_foodlist }}</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.snacks_ingredients }}</td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">Dinner</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.dinner_foodlist }}</td>
+                    <td style="border-bottom: 1px solid #ddd; padding: 10px;">{{ item.dinner_ingredients }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
